@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker Compose Demo</title>
+</head>
+
+<body>
+
+    <h1>Multi-Container Application</h1>
+
+    <button onclick="getMessage()">
+        Get Backend Message
+    </button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        async function getMessage() {
+
+            const response = await fetch("/api/message");
+
+            const data = await response.json();
+
+            document.getElementById("result").innerText =
+                data.message;
+        }
+    </script>
+
+</body>
+</html>
